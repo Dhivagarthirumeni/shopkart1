@@ -1,0 +1,57 @@
+
+<style>
+    #home{
+        background-color: #ffffff;
+    }
+   /* Add this CSS to your stylesheet */
+
+/* Style the unordered list (ul) */
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 10px; /* Add padding to the list */
+    background-color: #f0f0f0; /* Set the background color for the list */
+}
+
+/* Style the list item (li) */
+li {
+    margin-bottom: 15px; /* Add space between list items */
+}
+
+/* Style the paragraph inside the list item */
+.what-we-do {
+    background-color: #ffffff; /* Set the background color for the paragraph */
+    padding: 10px; /* Add padding to the paragraph */
+    border-radius: 8px; /* Add rounded corners to the paragraph */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Add any other styles you want for the paragraph content */
+
+</style>
+{% extends  'shop/layouts/main.html'%}
+{% block title %}
+shopkart | online shopping
+{% endblock title %}
+{% block content %}
+{% include 'shop/inc/slider.html' %}
+<body id="home">
+    
+
+<h1>what we do</h1>
+<ul>
+    <li>
+        <p class="what-we-do">
+            Smile Foundation’s comprehensive and community-centric health programme takes primary healthcare services to the doorsteps of underserved communities in both rural and urban India. Following a two pronged approach, the programme provides curative as well as preventive services, addressing the gaps in availability, accessibility and affordability of healthcare.
+        </p>
+    </li>
+</ul>
+<h1>why healthcare</h1>
+<ul>
+    <li>
+        <p class="why-healthcare">
+            With a population of 140 Billion, last mile delivery of healthcare in our country has always been a challenge. Nearly 72% of the population lives in rural areas and has access to only about 25% of the healthcare infrastructure. On the other hand, urban slum dwellers are mostly a migrated population for whom livelihood challenges are overwhelming and health lies at the bottom of the pyramid.
+        </p>    
+    </li>
+</ul>
+</body>
+{% endblock content %}

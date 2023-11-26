@@ -1,0 +1,56 @@
+
+{% extends  'shop/layouts/main.html'%}
+{% block title %}
+registeration |shopkart
+{% endblock title %}
+{% block content %}
+<style>
+    
+    .old_price{
+        color: red; 
+        background-color: rgb(216, 225, 157);
+        font-weight: bold;
+    }   
+   
+    .new_price{
+        background-color: rgb(42, 165, 71);
+        color: aliceblue;
+        padding: 2px;
+        border-radius: 5px;
+        font-weight: bold;
+
+
+}
+</style>
+<section class="bg-light py-4 my-3 " >
+    <div class="container">
+        <div class="row">
+            <h4 class="mb-2 ">{{category_name}} products</h4>
+            <hr style="border-color:rgb(9, 10, 10)">
+            
+        </div>
+                
+            {% for item in products %}
+            <div class="container-fluid">
+            <div class="col-md-3">
+                <div class="card my-2">
+                    <img src="{{item.product_image.url}}" class="rounded" alt="products">
+                    <a href="{% url 'product_details' cname=category_name pname=item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{item.name}}</h5>
+                       
+                        <span class="float-start old_price"><s>Rs.{{item.original_price |stringformat:'d'}}</s></span>
+                        <span class="float-end new_price" >Rs.{{item.selling_price | stringformat:'d'}}</span>
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+            
+            {% endfor %} 
+    </div>
+
+</section>
+
+{% endblock content %}
+
